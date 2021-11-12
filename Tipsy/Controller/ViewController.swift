@@ -59,6 +59,8 @@ class ViewController: UIViewController {
         if segue.identifier == "goToResults" {
             let destinationVC = segue.destination as! ReusltViewController
             destinationVC.totalPerPerson = tipCalculator.calculateTip()
+            destinationVC.split = tipCalculator.splitNumber
+            destinationVC.tip = tipCalculator.tipAmount
         }
     }
 }

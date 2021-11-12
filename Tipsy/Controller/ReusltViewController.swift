@@ -10,15 +10,24 @@ import UIKit
 
 class ReusltViewController: UIViewController {
     
+    
+    @IBOutlet weak var tipDescription: UILabel!
+    @IBOutlet weak var total: UILabel!
     var totalPerPerson: Float = 0.0
+    var split: Int = 2
+    var tip: Float = 0.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        total.text = String(format: "%.2f", totalPerPerson)
+        tipDescription.text = "Split between \(split) people, with \(tip) tip."
     }
     
-
+    @IBAction func recalculatePressed(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
